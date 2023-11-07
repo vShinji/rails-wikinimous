@@ -1,0 +1,9 @@
+<%= form_with model: @article do |f| %>
+  <%= f.label :title, class: "me-1"%> <i class="fa-solid fa-font fa-bounce"></i>
+  <%= f.text_field :title, class: "form-control form-control-lg my-3" %>
+  <%= f.label :content, class: "me-1" %> <i class="fa-regular fa-comments fa-bounce"></i>
+  <%= f.text_field :content, class: "form-control form-control-lg my-3" %>
+  <button type="submit" class="btn btn-outline-primary my-3 me-1">
+    Update <i class="fa-regular fa-paper-plane fa-bounce"></i>
+  </button>
+<% end %>

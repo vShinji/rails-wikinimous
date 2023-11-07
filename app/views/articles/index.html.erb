@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card-header my-2">
+    <h1>My articles</h1>
+    <%= link_to 'Add article', new_article_path, class:"text-decoration-none link-secondary p-2" %><i class="fa-solid fa-circle-plus"></i>
+  </div>
+  <% @articles.each do |article| %>
+  <div class="card py-3 mb-2">
+    <p><%= link_to article.title, article_path(article), class:"text-decoration-none link-primary p-2" %></p>
+    <%= link_to "Delete",
+      article_path(article.id), class:"text-decoration-none link-primary p-2",
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %><i class="fa-solid fa-trash-can"></i>
+  </div>
+    <% end %>
+</div>
